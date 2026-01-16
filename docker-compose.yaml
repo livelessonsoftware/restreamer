@@ -1,14 +1,15 @@
-version: "3"
+version: "3.8"
 services:
-  restreamer:
-    image: datarhei/restreamer:latest
+  ome:
+    image: ovenmediaengine/ovenmediaengine:latest
     ports:
-      - "8083:8080"
-    environment:
-      RS_USERNAME: "admin"
-      RS_PASSWORD: "StrongPassHere"
+      - "1935:1935"
+      - "80:80"
+      - "8888:8888"
+      - "4443:4443"
     volumes:
-      - restreamer-data:/restreamer/db
+      - ./Server.xml:/etc/ome/Server.xml
+      - ome_hls:/var/ome/hls
 
 volumes:
-  restreamer-data:
+  ome_hls:
