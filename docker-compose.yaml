@@ -1,0 +1,14 @@
+version: "3"
+services:
+  restreamer:
+    image: datarhei/restreamer:latest
+    ports:
+      - "8080:8080"
+    environment:
+      RS_USERNAME: "admin"
+      RS_PASSWORD: "StrongPassHere"
+    volumes:
+      - restreamer-data:/restreamer/db
+
+volumes:
+  restreamer-data:
