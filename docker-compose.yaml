@@ -3,7 +3,7 @@ services:
   restreamer:
     image: datarhei/restreamer:latest
     ports:
-      - "8082:8080"
+      - "8083:8080"
     environment:
       RS_USERNAME: "admin"
       RS_PASSWORD: "StrongPassHere"
